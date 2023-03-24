@@ -9,6 +9,7 @@ const Home = () => {
     
     <HeaderNavBar />
     <CardHero />
+    <p className='font-semibold mx-4'> Ultime Notizie </p>
     <div className='flex flex-row'>
     <CardArticle maxwidth="md"/>
     <CardArticle maxwidth="md"/>
