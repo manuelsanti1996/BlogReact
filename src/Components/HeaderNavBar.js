@@ -8,7 +8,7 @@ const HeaderNavBar = () => {
     };
 
     return (
-        <div className='flex justify-between items-center p-4 border-b-4 border-stone-900'>
+        <div className='flex justify-between items-center p-4 border-b-2 border-stone-900 ml-4 mr-4'>
             <div className='flex items-center'>
                 <a href='#'>
                     <img src='logo.jpeg' alt='Logo' style={{ height: '40px', width: '40px' }} />
