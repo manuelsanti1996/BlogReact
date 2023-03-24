@@ -12,7 +12,7 @@ const Home = () => {
     <p className='font-semibold mx-4'> Ultime Notizie </p>
     <div className='flex flex-row'>
     <CardArticle maxwidth="md"/>
-    <CardArticle maxwidth="md"/>
+    
     </div>
     </div>
   )
