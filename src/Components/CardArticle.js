@@ -1,13 +1,14 @@
 import React from 'react'
 
-const CardArticle = () => {
+const CardArticle = (props) => {
+    const { title, description, image } = props;
     return (
         <div className=" flex justify-center items-center">
             <div className=" w-60 p-4 bg-white rounded-xl ">
-                <img className='h-40 object-cover rounded-xl' src="images.jpg" />
+                <img className='h-40 object-cover rounded-xl' src={image} />
                 <div>
-                    <h2 className='font-bold text-lg'>Titolo articolo</h2>
-                    <p className='text -sm text-gray-600'>Lorem Ipsum dolor sit amet consectetur adipisiping elit. Sequi quaerat quod adipisci, totam dolore</p>
+                    <h2 className='font-bold text-lg'>{title}</h2>
+                    <p className='text -sm text-gray-600'>{description}</p>
                 </div>
                 <div className='flex  justify-between'>
                     <div>
@@ -21,7 +22,6 @@ const CardArticle = () => {
                     </div>
                 </div>
             </div>
-
         </div>
 
     )
