@@ -3,8 +3,8 @@ import React from 'react'
 const CardArticle = (props) => {
     const { title, description, image } = props;
     return (
-        <div className=" flex justify-center items-center">
-            <div className=" w-60 p-4 bg-white rounded-xl ">
+        <div className=" flex  m-4 ml-0 justify-center items-center">
+            <div className=" w-60  bg-white rounded-xl ">
                 <img className='h-40 object-cover rounded-xl' src={image} />
                 <div>
                     <h2 className='font-bold text-lg'>{title}</h2>
