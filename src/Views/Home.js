@@ -1,7 +1,9 @@
 import React from 'react'
-import CardArticle from '../Components/CardArticle'
+
 import HeaderNavBar from '../Components/HeaderNavBar'
 import CardHero from '../Components/CardHero'
+import CardsList from '../Components/CardsList'
+import SearchBar from '../Components/SearchBar'
 
 const Home = () => {
   return (
@@ -9,11 +11,9 @@ const Home = () => {
       <HeaderNavBar />
       <CardHero title="Blog" description="descrizione della card" bgimage="./sfondo.jpeg" />
       <p className='font-semibold mx-4'> Ultime Notizie </p>
-      <div className='flex flex-row overflow-x-auto'>
-        <CardArticle title="Articolo 1 " description="lorem ipsum" image="cardarticle.jpg" maxwidth="md" />
-        <CardArticle title="Articolo 2" description="sed id faciam" image="images.jpg" maxwidth="md" />
-        <CardArticle title="Articolo 3" description="iniquit" image="project-img1.png" maxwidth="md" />
-      </div>
+      <CardsList />
+      <p className='font-semibold mx-4 my-4'>Archivio Notizie </p>
+      <SearchBar />
     </div>
   )
 }
