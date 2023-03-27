@@ -1,9 +1,8 @@
 import React from 'react'
-
 import HeaderNavBar from '../Components/HeaderNavBar'
 import CardHero from '../Components/CardHero'
 import CardsList from '../Components/CardsList'
-import SearchBar from '../Components/SearchBar'
+import SearchBar from '../Components/SearchBar/FilteredArticleList'
 
 const Home = () => {
   return (
