@@ -1,5 +1,5 @@
 import React from "react";
-import CardArticle from "../CardArticle";
+import CardArticle from "../Card/CardArticle";
 
 const ArticleList = ({ articles }) => {
     return (

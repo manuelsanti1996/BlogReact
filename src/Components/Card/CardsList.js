@@ -1,8 +1,8 @@
 import React from 'react';
-import { articleData } from '../data';
+import { articleData } from '../../data';
 import CardArticle from './CardArticle';
 
-function CardsList() {
+const CardsList=()=> {
     return (
         <div className='flex flex-row p-4 overflow-x-auto'>
             {articleData.map(card => (

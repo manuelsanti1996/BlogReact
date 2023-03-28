@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderNavBar from '../Components/HeaderNavBar'
-import CardHero from '../Components/CardHero'
-import CardsList from '../Components/CardsList'
+import CardHero from '../Components/Card/CardHero'
+import CardsList from '../Components/Card/CardsList'
 import SearchBar from '../Components/SearchBar/FilteredArticleList'
 
 const Home = () => {
