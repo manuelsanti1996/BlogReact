@@ -1,6 +1,6 @@
 import React from "react"
 
-const Tag = ({ tag, onTagSelected }) => {
+const Tag = ({ tag, active, onTagSelected }) => {
   
   const handleClick = () => {
     onTagSelected(tag);
@@ -9,7 +9,7 @@ const Tag = ({ tag, onTagSelected }) => {
   return (
     <div className="inline-block mr-2 mt-2">
       <div
-        className="flex items-center px-2 py-1 border rounded-full bg-gray-200 text-sm font-medium text-gray-700 cursor-pointer"
+        className={`flex items-center px-2 py-1 border rounded-full text-sm font-medium cursor-pointer ${active ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
         onClick={handleClick}
       >
         <button>{tag}</button>
@@ -19,6 +19,7 @@ const Tag = ({ tag, onTagSelected }) => {
 };
 
 export default Tag;
+
 
 
 /*workarounds: the tag parameter of your component represented an object(tag) and not a string({tag}

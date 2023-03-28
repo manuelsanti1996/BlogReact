@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tag from './Tag';
 import { articleData } from '../../data';
 
 const TagList = ({ tags: articleTags, onTagSelected }) => {
-  console.log("TIPO VARIABILE: ", typeof articleTags);
+  const [selectedTag, setSelectedTag] = useState('');
 
   const tags = [...new Set(articleData.map(article => article.tag))];
 
+  const handleTagSelected = (tag) => {
+    setSelectedTag(tag);
+    onTagSelected(tag);
+  };
+
   return (
     <div>
-
       {tags.map((tag) => (
         <Tag key={tag}
           tag={tag}
-          onTagSelected={onTagSelected}
+          active={selectedTag === tag}
+          onTagSelected={() => handleTagSelected(tag)}
         />
       ))}
     </div>
@@ -23,8 +28,7 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
 export default TagList;
 
 
+
 /* new Set è un oggetto JavaScript che rappresenta una collezione di valori univoci,
  dove ogni valore può comparire solo una volta.
-
-articleData.map(article => article.tag) crea un nuovo array che contiene solo i valori dell'attributo "tag" 
-per ogni oggetto all'interno dell'array articleData.*/
+*/
