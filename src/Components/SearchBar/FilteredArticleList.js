@@ -47,7 +47,6 @@ const FilteredArticleList = () => {
 export default FilteredArticleList;
 
 /*
-the FilteredArticleList component shows a list of articles 
-filtered based on the user's search and uses the SearchInput
-component to allow the user to search for articles in the list.
+
+Object.values(TAGS)=["tag1", "tag2", "tag3", "tag4"]
 */

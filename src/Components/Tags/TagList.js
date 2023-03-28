@@ -6,8 +6,8 @@ const TagList = ({ tags, onTagSelected }) => {
     <div>
       {tags.map((tag) => (
         <Tag key={tag}
-          tag={tag}
-          onTagSelected={onTagSelected}
+             tag={tag}
+             onTagSelected={onTagSelected}
         />
       ))}
     </div>
