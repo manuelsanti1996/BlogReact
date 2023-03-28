@@ -5,7 +5,10 @@ const TagList = ({ tags, onTagSelected }) => {
   return (
     <div>
       {tags.map((tag) => (
-        <Tag key={tag} tag={tag} onTagSelected={onTagSelected} />
+        <Tag key={tag}
+          tag={tag}
+          onTagSelected={onTagSelected}
+        />
       ))}
     </div>
   );

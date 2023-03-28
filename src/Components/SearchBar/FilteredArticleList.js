@@ -38,7 +38,7 @@ const FilteredArticleList = () => {
 
         <div className="ml-4">
             <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
-             <TagList tags={Object.values(TAGS)} onTagSelected={ setSelectedTag} />
+             <TagList tags= {Object.values(TAGS)} onTagSelected= {setSelectedTag} />
             <ArticleList articles={filteredArticles} />
         </div>
     );
