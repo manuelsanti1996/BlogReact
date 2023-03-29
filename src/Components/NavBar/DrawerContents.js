@@ -1,23 +1,25 @@
-import React from 'react'
+import React from 'react';
 
 const DrawerContents = () => {
-    return (
-        <div className="fixed inset-0  bg-black ">
-        <div className=" text-white rounded-lg">
-            <ul>
-                <li>
-                    Home
-                </li>
-                <li>
-                    Archivio
-                </li>
-                <li>
-                    Contatti
-                </li>
-            </ul>
-        </div>
-        </div>
-    )
-}
+  return (
+    <div className="fixed inset-0 bg-black">
+      <div className="text-white rounded-lg">
+        <ul>
+          <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
+            Home
+          </li>
+          <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
+            Archivio
+          </li>
+          <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
+            Contatti
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-export default DrawerContents
+export default DrawerContents;
+
+
