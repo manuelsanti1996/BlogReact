@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderNavBar from '../Components/HeaderNavBar'
+import HeaderNavBar from '../Components/NavBar/HeaderNavBar'
 import CardHero from '../Components/Card/CardHero'
 import CardsList from '../Components/Card/CardsList'
 import SearchBar from '../Components/SearchBar/FilteredArticleList'

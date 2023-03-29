@@ -8,13 +8,20 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
   const tags = [...new Set(articleData.map(article => article.tag))];
 
   const handleTagSelected = (tag) => {
-    if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter(selectedTag => selectedTag !== tag));
-      onTagSelected(selectedTags.filter(selectedTag => selectedTag !== tag));
-    } else {
+    const index = selectedTags.indexOf(tag);
+
+    if (index === -1) {
+      // Il tag non è stato selezionato, lo aggiungiamo all'array
       setSelectedTags([...selectedTags, tag]);
-      onTagSelected([...selectedTags, tag]);
+    } else {
+      // Il tag è già stato selezionato, lo rimuoviamo dall'array
+      const newSelectedTags = [...selectedTags];
+      newSelectedTags.splice(index, 1);
+      setSelectedTags(newSelectedTags);
     }
+
+    // Richiamiamo la funzione onTagSelected con l'array dei tag selezionati
+    onTagSelected(selectedTags);
   };
 
   return (
@@ -22,7 +29,7 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
       {tags.map((tag) => (
         <Tag key={tag}
           tag={tag}
-          active={selectedTags.includes(tag)}
+          active={selectedTags.indexOf(tag) !== -1}
           onTagSelected={() => handleTagSelected(tag)}
         />
       ))}
@@ -31,7 +38,6 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
 };
 
 export default TagList;
-
 
 
 
