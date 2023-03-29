@@ -8,43 +8,34 @@ import SearchInput from "./SearchInput";
 const FilteredArticleList = () => {
     const [searchInput, setSearchInput] = useState("");
     const [filteredArticles, setFilteredArticles] = useState(articleData);
-    const [selectedTag, setSelectedTag] = useState(null);
-
-
-    
+    const [selectedTags, setSelectedTags] = useState([]);
 
     useEffect(() => {
         const filtered = articleData.filter((card) => {
             return card.title.toLowerCase().includes(searchInput);
         });
-        setFilteredArticles(filtered);
-    }, [searchInput]);
 
-    useEffect(() => {
-        if (selectedTag === null) {
-            setFilteredArticles(articleData);
-        } else {
-            const filtered = articleData.filter((card) => {
-                return card.tag === selectedTag;
+        if (selectedTags.length > 0) {
+            const tagFiltered = filtered.filter((card) => {
+                return selectedTags.includes(card.tag);
             });
+            setFilteredArticles(tagFiltered);
+        } else {
             setFilteredArticles(filtered);
         }
-    }, [selectedTag]);
-
-
-
+    }, [searchInput, selectedTags]);
 
     return (
-
         <div className="ml-4">
             <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
-             <TagList tags= {Object.values(TAGS)} onTagSelected= {setSelectedTag} />
+            <TagList tags={Object.values(TAGS)} onTagSelected={setSelectedTags} />
             <ArticleList articles={filteredArticles} />
         </div>
     );
 };
 
 export default FilteredArticleList;
+
 
 /*
 

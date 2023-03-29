@@ -3,13 +3,18 @@ import Tag from './Tag';
 import { articleData } from '../../data';
 
 const TagList = ({ tags: articleTags, onTagSelected }) => {
-  const [selectedTag, setSelectedTag] = useState('');
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const tags = [...new Set(articleData.map(article => article.tag))];
 
   const handleTagSelected = (tag) => {
-    setSelectedTag(tag);
-    onTagSelected(tag);
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter(selectedTag => selectedTag !== tag));
+      onTagSelected(selectedTags.filter(selectedTag => selectedTag !== tag));
+    } else {
+      setSelectedTags([...selectedTags, tag]);
+      onTagSelected([...selectedTags, tag]);
+    }
   };
 
   return (
@@ -17,7 +22,7 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
       {tags.map((tag) => (
         <Tag key={tag}
           tag={tag}
-          active={selectedTag === tag}
+          active={selectedTags.includes(tag)}
           onTagSelected={() => handleTagSelected(tag)}
         />
       ))}
@@ -26,6 +31,9 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
 };
 
 export default TagList;
+
+
+
 
 
 
