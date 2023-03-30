@@ -14,14 +14,17 @@ const FilteredArticleList = () => {
         const filtered = articleData.filter((card) => {
             return card.title.toLowerCase().includes(searchInput);
         });
-
+    
         if (selectedTags.length > 0) {
             const tagFiltered = filtered.filter((card) => {
                 return selectedTags.includes(card.tag);
             });
             setFilteredArticles(tagFiltered);
-        } 
+        } else {
+            setFilteredArticles(articleData);
+        }
     }, [searchInput, selectedTags]);
+    
 
     return (
         <div className="ml-4">
