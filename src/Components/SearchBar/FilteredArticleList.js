@@ -20,9 +20,7 @@ const FilteredArticleList = () => {
                 return selectedTags.includes(card.tag);
             });
             setFilteredArticles(tagFiltered);
-        } else {
-            setFilteredArticles(filtered);
-        }
+        } 
     }, [searchInput, selectedTags]);
 
     return (
