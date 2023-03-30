@@ -11,20 +11,26 @@ const FilteredArticleList = () => {
     const [selectedTags, setSelectedTags] = useState([]);
 
     useEffect(() => {
-        const filtered = articleData.filter((card) => {
-            return card.title.toLowerCase().includes(searchInput);
+    const filtered = articleData.filter((card) => {
+        return card.title.toLowerCase().includes(searchInput.toLowerCase());
+    });
+
+    if (selectedTags.length > 0) {
+        const tagFiltered = filtered.filter((card) => {
+            return selectedTags.includes(card.tag);
         });
-    
-        if (selectedTags.length > 0) {
-            const tagFiltered = filtered.filter((card) => {
-                return selectedTags.includes(card.tag);
-            });
-            setFilteredArticles(tagFiltered);
-        } else {
-            setFilteredArticles(articleData);
-        }
-    }, [searchInput, selectedTags]);
-    
+        setFilteredArticles(tagFiltered);
+    } else {
+        setFilteredArticles(articleData);
+    }
+}, [searchInput, selectedTags]);
+
+useEffect(() => {
+    const dynamicFiltered = articleData.filter((card) => {
+      return card.title.toLowerCase().includes(searchInput);
+    });
+    setFilteredArticles(dynamicFiltered);
+  }, [searchInput]);
 
     return (
         <div className="ml-4">
