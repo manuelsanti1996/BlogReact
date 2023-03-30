@@ -1,5 +1,7 @@
-import Home from "./Views/Home"
+
 import './App.css';
+import ArticleTemplate from './Views/ArticleTemplate';
+import Home from './Views/Home';
 
 
 
@@ -7,7 +9,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Home />
+    <ArticleTemplate />
     </div>
   );
 }
