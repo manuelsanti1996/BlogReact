@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import DrawerContents from './DrawerContents';
 import Hamburger from './Hamburger';
 import Xsvg from './Xsvg';
@@ -6,6 +6,14 @@ import Xsvg from './Xsvg';
 
 const Drawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"; 
+    } else {
+      document.body.style.overflow = "auto"; 
+    }
+  }, [isOpen]);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -25,7 +33,7 @@ const Drawer = () => {
         )}
       </button>
       <div
-        className={`inset-0  transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`inset-0  transform ${isOpen ? 'translate-x-0 ' : 'translate-x-full  '
           }`}
         onClick={toggleDrawer}
       ></div>
