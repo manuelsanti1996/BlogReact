@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { articleData } from "../../data";
-import { TAGS } from "../../Enums/tags";
+import { TAGS } from "../../Enums";
 import TagList from "../Tags/TagList";
 import ArticleList from "./ArticleList";
 import SearchInput from "./SearchInput";
@@ -39,4 +39,8 @@ export default FilteredArticleList;
 /*
 
 Object.values(TAGS)=["tag1", "tag2", "tag3", "tag4"]
+useMemo ottimizza la performance evitando di ricalcolare il valore di una funzione 
+ogni volta che il componente viene ri-renderizzato. Invece, calcola il valore solo 
+quando le dipendenze cambiano e restituisce la versione memorizzata se le dipendenze
+ rimangono le stesse.
 */

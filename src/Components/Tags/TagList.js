@@ -1,42 +1,31 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tag from './Tag';
 import { articleData } from '../../data';
 
-const TagList = ({ tags: articleTags, onTagSelected }) => {
+const TagList = ({ onTagSelected }) => {
   const [selectedTags, setSelectedTags] = useState([]);
 
   useEffect(() => {
     onTagSelected(selectedTags);
-  }, [selectedTags]);
+  }, [selectedTags, onTagSelected]);
 
   const tags = [...new Set(articleData.map(article => article.tag))];
 
   const handleTagSelected = (tag) => {
-    const index = selectedTags.indexOf(tag);
-  
-    if (index === -1) {
-      // Il tag non è stato selezionato, lo aggiungiamo all'array
-      const newSelectedTags = [...selectedTags, tag];
-      setSelectedTags(newSelectedTags);
-      // Richiamiamo la funzione onTagSelected con l'array dei tag selezionati
-      onTagSelected(newSelectedTags);
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(selectedTags.filter(t => t !== tag));
     } else {
-      // Il tag è già stato selezionato, lo rimuoviamo dall'array
-      const newSelectedTags = [...selectedTags];
-      newSelectedTags.splice(index, 1);
-      setSelectedTags(newSelectedTags);
-      // Richiamiamo la funzione onTagSelected con l'array dei tag selezionati
-      onTagSelected(newSelectedTags);
+      setSelectedTags([...selectedTags, tag]);
     }
   };
-  
 
   return (
     <div>
       {tags.map((tag) => (
-        <Tag key={tag}
+        <Tag
+          key={tag}
           tag={tag}
-          active={selectedTags.indexOf(tag) !== -1}
+          active={selectedTags.includes(tag)}
           onTagSelected={() => handleTagSelected(tag)}
         />
       ))}
@@ -45,6 +34,7 @@ const TagList = ({ tags: articleTags, onTagSelected }) => {
 };
 
 export default TagList;
+
 
 
 

@@ -1,4 +1,4 @@
-import { TAGS } from "./Enums/tags";
+import { TAGS, BODYELEMENT } from "./Enums/index";
 
 export const articleData = [
     {
@@ -6,63 +6,189 @@ export const articleData = [
         description: "lorem ipsum",
         image: "./images/th.jpg",
         tag: TAGS.TAG1,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 2",
         description: "sed id faciam",
         image: "./images/images.jpg",
         tag: TAGS.TAG2,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 3",
         description: "iniquit",
         image: "./images/cardarticle.jpg",
         tag: TAGS.TAG3,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 4 ",
         description: "lorem ipsum",
         image: "./images/pompa-idraulica_NG1.jpg",
         tag: TAGS.TAG1,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 5",
         description: "sed id faciam",
         image: "./images/images.jpg",
         tag: TAGS.TAG4,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 6",
         description: "iniquit",
         image: "./images/po.gif",
         tag: TAGS.TAG1,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 7 ",
         description: "d",
         image: "./images/c.png",
         tag: TAGS.TAG4,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 8",
         description: "b",
         image: "./images/images.jpg",
         tag: TAGS.TAG2,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
     {
         title: "Articolo 9",
         description: "c",
         image: "./images/cardarticle.jpg",
         tag: TAGS.TAG1,
-        maxwidth: "md"
+        maxwidth: "md",
+        body:[
+            {
+                type:BODYELEMENT.QUOTE,
+                textValue:"Ciao io sono una quote"
+            },
+            {
+                type:BODYELEMENT.IMAGE,
+                src:"urlimmagine"
+            },
+            {
+                type:BODYELEMENT.PARAGRAF,
+                textValue:"Ciao io sono un paragrafo"
+            }
+        ]
     },
 ];
 
