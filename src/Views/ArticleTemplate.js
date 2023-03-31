@@ -3,6 +3,10 @@ import CardHero from '../Components/Card/CardHero'
 import Logo from "../Components/NavBar/Logo"
 import CardSection from '../Components/Card/CardSection'
 import CardsListComment from '../Components/Card/CardsListComment'
+
+
+
+
 const ArticleTemplate = () => {
   return (
     <div>
@@ -10,6 +14,7 @@ const ArticleTemplate = () => {
         <Logo />
       </div>
       <CardHero height="320px" margin="0" bgimage="././images/sfondo.jpeg" />
+
       <CardSection
         style={{ backgroundColor: 'white', padding: '20px', borderRadius: '5px' }}
         title="Titolo Articolo"
@@ -22,9 +27,9 @@ const ArticleTemplate = () => {
            To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain 
            some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure
             that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+        />
 
-      />
-      <p className='font-bold text-2xl p-5'>Commenti </p>
+      <p className='font-bold text-2xl p-5'>Commenti</p>
       <CardsListComment />
       
     </div>

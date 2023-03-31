@@ -4,10 +4,11 @@ import CardHero from '../Components/Card/CardHero'
 import CardsList from '../Components/Card/CardsList'
 import SearchBar from '../Components/SearchBar/FilteredArticleList'
 
+
 const Home = () => {
   return (
     <div>
-      <HeaderNavBar />
+      <HeaderNavBar/>
       <CardHero title="Blog" margin="1rem" height="320px" borderRadius="6px"description="descrizione della card" bgimage="././images/sfondo.jpeg" />
       <p className='font-semibold mx-4'> Ultime Notizie </p>
       <CardsList />

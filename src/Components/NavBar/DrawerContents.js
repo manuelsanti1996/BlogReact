@@ -6,10 +6,10 @@ const DrawerContents = () => {
       <div className="text-white rounded-lg">
         <ul>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-            Home
+            <a>Home</a>
           </li>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-            Archivio
+          <a>Archivio</a>
           </li>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
             Contatti

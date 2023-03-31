@@ -8,7 +8,6 @@ const CardsListComment = () => {
         <div className='flex flex-wrap'>
         {CommentData.map(comment => (
                 <CardComment
-                    
                     name={comment.name}
                     comment={comment.comment}
                 />

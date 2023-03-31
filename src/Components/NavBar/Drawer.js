@@ -4,8 +4,15 @@ import Hamburger from './Hamburger';
 import Xsvg from './Xsvg';
 
 
+
+
+
 const Drawer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
   
   useEffect(() => {
     if (isOpen) {
@@ -15,10 +22,7 @@ const Drawer = () => {
     }
   }, [isOpen]);
 
-  const toggleDrawer = () => {
-    setIsOpen(!isOpen);
-  };
-
+  
   return (
     <div className="relative">
       <button

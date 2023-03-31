@@ -1,7 +1,9 @@
 import React from 'react'
 
 const CardArticle = (props) => {
+
     const { title, description, image } = props;
+
     return (
         <div className=" flex  m-4 ml-0 justify-center items-center">
             <div className=" w-60  bg-white rounded-xl ">
