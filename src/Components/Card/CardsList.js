@@ -2,12 +2,14 @@ import React from 'react';
 import { articleData } from '../../data';
 import CardArticle from './CardArticle';
 
-const CardsList=()=> {
+const CardsList = ({ style = 'flex flex-row p-4 overflow-x-auto', data = articleData }) => {
+
     return (
-        <div className='flex flex-row p-4 overflow-x-auto'>
-            {articleData.map(card => (
+        <div className={style}>
+            {data.map((card, index) => (
                 <CardArticle
-                    key={card.title}
+                    key={index}
+                    id={card.id}
                     title={card.title}
                     image={card.image}
                     description={card.description}

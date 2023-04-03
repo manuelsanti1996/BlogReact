@@ -2,8 +2,8 @@ import React, { useState, useMemo } from "react";
 import { articleData } from "../../data";
 import { TAGS } from "../../Enums";
 import TagList from "../Tags/TagList";
-import ArticleList from "./ArticleList";
 import SearchInput from "./SearchInput";
+import CardsList from "../Card/CardsList";
 
 const FilteredArticleList = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -27,7 +27,7 @@ const FilteredArticleList = () => {
     <div className="ml-4">
       <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
       <TagList tags={Object.values(TAGS)} onTagSelected={setSelectedTags} />
-      <ArticleList articles={filteredArticles} />
+      <CardsList style="flex flex-wrap" data={filteredArticles} />
     </div>
   );
 };
