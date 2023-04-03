@@ -8,8 +8,8 @@ import SearchBar from '../Components/SearchBar/FilteredArticleList'
 const Home = () => {
   return (
     <div>
-      <HeaderNavBar/>
-      <CardHero title="Blog" margin="1rem" height="320px" borderRadius="6px"description="descrizione della card" bgimage="././images/sfondo.jpeg" />
+      <HeaderNavBar />
+      <CardHero title="Blog" margin="1rem" height="320px" borderRadius="6px" description="descrizione della card" bgimage="././images/sfondo.jpeg" />
       <p className='font-semibold mx-4'> Ultime Notizie </p>
       <CardsList />
       <p className='font-semibold mx-4 my-4'>Archivio Notizie </p>

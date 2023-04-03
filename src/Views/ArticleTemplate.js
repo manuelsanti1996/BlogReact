@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { articleData } from "../data"
 import PropTypes from 'prop-types';
 import CardBody from '../Components/Card/CardBody';
-
+import { Link } from "react-router-dom"
 
 const CardSection = (props) => {
   const { style, title, description } = props;
@@ -54,7 +54,7 @@ const ArticleTemplate = () => {
   return (
     <div>
       <div className='py-4 ml-4 mr-4'>
-        <img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, }} />
+        <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, }} /></Link>
       </div>
       <div>
         {data && (

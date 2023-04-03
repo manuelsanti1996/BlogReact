@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const DrawerContents = () => {
   return (
@@ -6,13 +7,13 @@ const DrawerContents = () => {
       <div className="text-white rounded-lg">
         <ul>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-          <a>Archivio</a>
+            <Link to="/archive">Archivio</Link>
           </li>
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-            Contatti
+            <Link to="/contacts">Contatti</Link>
           </li>
         </ul>
       </div>
