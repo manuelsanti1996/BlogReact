@@ -21,7 +21,11 @@ export const articleData = [
             {
                 type: BODYELEMENT.PARAGRAPH,
                 textValue: "Vivamus auctor ex vitae metus fermentum, non bibendum mi consequat. Aliquam non est non risus tristique varius ac sit amet nulla. "
-            }
+            },
+            {
+                type: BODYELEMENT.IMAGE,
+                src: "../images/11.jpg"
+            },
         ]
     },
     {

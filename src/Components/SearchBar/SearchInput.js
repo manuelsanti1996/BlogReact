@@ -14,6 +14,7 @@ const SearchInput = ({ searchInput, setSearchInput }) => {
             placeholder="Search here"
             onChange={handleChange}
             value={searchInput}
+            style={{ width: '360px' }}
         />
     );
 };

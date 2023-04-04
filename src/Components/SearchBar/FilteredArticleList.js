@@ -27,7 +27,7 @@ const FilteredArticleList = () => {
     <div className="ml-4">
       <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
       <TagList tags={Object.values(TAGS)} onTagSelected={setSelectedTags} />
-      <CardsList style="flex flex-wrap" data={filteredArticles} />
+      <CardsList style="flex flex-wrap " data={filteredArticles} />
     </div>
   );
 };

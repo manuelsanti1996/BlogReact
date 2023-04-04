@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import ImageBody from './ImageBody'
 import ParagraphBody from './ParagraphBody'
 import QuoteBody from './QuoteBody'
+import { BODYELEMENT } from '../../Enums'
 
 const ArticleBody = ({ data }) => {
 
@@ -9,16 +10,23 @@ const ArticleBody = ({ data }) => {
         console.log(data?.body)
     }, [data?.body])
 
+    const renderBodyElement = (item, index) => {
+        switch (item.type) {
+            case BODYELEMENT.IMAGE:
+                return <ImageBody key={index} image={item.src} />
+            case BODYELEMENT.PARAGRAPH:
+                return <ParagraphBody key={index} textValue={item.textValue} />
+            case BODYELEMENT.QUOTE:
+                return <QuoteBody key={index} text={item.textValue} author={item.author} />
+            default:
+                return null
+        }
+    }
+
     return (
-        <div>
+        <div className="d-flex justify-content-center p-5">
             {data?.body?.map((item, index) => {
-                if (item.type === "image") {
-                    return <ImageBody key={index} image={item.src} />
-                } else if (item.type === "paragraph") {
-                    return <ParagraphBody key={index} textValue={item.textValue} />
-                } else if (item.type === "quote") {
-                    return <QuoteBody key={index} text={item.textValue} author={item.author} />
-                }
+                return renderBodyElement(item, index)
             })}
         </div>
     )
