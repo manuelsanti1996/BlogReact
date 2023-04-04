@@ -1,19 +1,17 @@
-
 import CardsListComment from '../Components/Card/CardsListComment'
 import { useSearchParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { articleData } from "../data"
 import PropTypes from 'prop-types';
-import CardBody from '../Components/Card/CardBody';
 import { Link } from "react-router-dom"
+import ArticleBody from '../Components/Article/ArticleBody';
 
 const CardSection = (props) => {
-  const { style, title, description } = props;
+  const { style, title } = props;
 
   return (
     <div style={style}>
       <h1 className="  font-bold text-2xl">{title}</h1>
-      <CardBody description={description} />
     </div>
   );
 
@@ -27,7 +25,6 @@ CardSection.propTypes = {
 
 
 const ArticleTemplate = () => {
-
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState();
 
@@ -40,8 +37,6 @@ const ArticleTemplate = () => {
     console.log(data)
   }, [data]);
 
-
-
   const getData = (id) => {
     articleData.map((data) => {
       console.log(data.id, id)
@@ -50,7 +45,7 @@ const ArticleTemplate = () => {
       }
     })
   }
-  console.log(data?.image)
+
   return (
     <div>
       <div className='py-4 ml-4 mr-4'>
@@ -67,10 +62,9 @@ const ArticleTemplate = () => {
       </div>
       <CardSection
         title={data?.title}
-        description={data?.description}
         style={{ backgroundColor: 'white', padding: '20px', borderRadius: '5px' }}
-
       />
+      <ArticleBody data={data} />
 
       <p className='font-bold text-2xl p-5'>Commenti</p>
       <CardsListComment />

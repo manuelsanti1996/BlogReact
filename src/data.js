@@ -11,15 +11,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "I have not failed. I've just found 10,000 ways that won't work.",
+                author: "Thomas A. Edison"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/0.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Vivamus auctor ex vitae metus fermentum, non bibendum mi consequat. Aliquam non est non risus tristique varius ac sit amet nulla. "
             }
         ]
     },
@@ -33,15 +34,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "The best way to predict the future is to invent it.",
+                author: "Alan Kay"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/1.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere turpis in risus consectetur luctus. Duis ac lobortis sapien. "
             }
         ]
     },
@@ -55,15 +57,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "If you can't explain it simply, you don't understand it well enough.",
+                author: "Albert Einstein"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/2.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Maecenas tincidunt eros a nisl iaculis sagittis. Aliquam sed diam ut nibh consectetur efficitur eu ut augue. "
             }
         ]
     },
@@ -77,15 +80,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "The only true wisdom is in knowing you know nothing.",
+                author: "Socrates"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/3.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Donec malesuada nisi nec sagittis maximus. Nulla facilisi. Nullam id urna id augue efficitur luctus in vel mi. "
             }
         ]
     },
@@ -99,15 +103,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "Believe you can and you're halfway there.",
+                author: "Theodore Roosevelt"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/4.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Nam in fringilla augue, eget pharetra odio. Curabitur vel placerat nisi, a ullamcorper mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; "
             }
         ]
     },
@@ -121,15 +126,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "It does not matter how slowly you go as long as you do not stop.",
+                author: "Confucius"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/5.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Pellentesque mollis lectus sed ipsum suscipit congue. Nam varius libero quis ante feugiat tincidunt. "
             }
         ]
     },
@@ -143,15 +149,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                author: "Winston Churchill"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/6.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Sed tincidunt urna vel tortor bibendum aliquam. Nullafacilisi. Integer maximus malesuada nisl, vel hendrerit mi ullamcorper eu. "
             }
         ]
     },
@@ -165,15 +172,16 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "Happiness is not something ready-made. It comes from your own actions.",
+                author: "Dalai Lama"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/7.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Suspendisse a risus elit. Sed suscipit arcu eu ex venenatis, non tempus mauris dictum. Sed sollicitudin eros sit amet magna malesuada ultrices. "
             }
         ]
     },
@@ -186,47 +194,42 @@ export const articleData = [
         body: [
             {
                 type: BODYELEMENT.QUOTE,
-                textValue: "Ciao io sono una quote"
+                textValue: "You miss 100% of the shots you don't take.",
+                author: "Wayne Gretzky"
             },
             {
                 type: BODYELEMENT.IMAGE,
-                src: "urlimmagine"
+                src: "../images/8.jpg"
             },
             {
-                type: BODYELEMENT.PARAGRAF,
-                textValue: "Ciao io sono un paragrafo"
+                type: BODYELEMENT.PARAGRAPH,
+                textValue: "Morbi commodo sapien vel nunc rutrum, ac commodo arcu pretium. Sed commodo venenatis enim, a auctor sapien facilisis ut. "
             }
         ]
     },
 ];
 
 export const CommentData = [
-
     {
-        name: "Miriam",
-        comment: "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4"
+        name: "Maria",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-
-        name: "Miriam",
-        comment: "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) fasfsdfs f afari/537.4"
+        name: "Giovanni",
+        comment: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
     },
     {
-
-        name: "Miriam",
-        comment: "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537sgedgdsgfdghbdfhdf Safari/537.4"
+        name: "Paolo",
+        comment: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
     },
     {
-
-        name: "Miriam",
-        comment: "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537gwegsdgsgsdgsdgsdgsgsd",
+        name: "Luisa",
+        comment: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
-
-        name: "Miriam",
-        comment: "Mozilla/5.0 (Windows NT 6.2) Afasfasfasfasffas4 Safari/537.4"
+        name: "Marco",
+        comment: "Maecenas aliquet tortor eget ligula ullamcorper, eget lobortis purus tincidunt."
     },
-
 ];
 
 
