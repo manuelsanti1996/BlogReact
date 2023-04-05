@@ -5,12 +5,12 @@ import TagList from "../Tags/TagList";
 import SearchInput from "./SearchInput";
 import CardsList from "../Card/CardsList";
 
-const FilteredArticleList = () => {
+const FilteredArticleList = ({data}) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
 
   const filteredArticles = useMemo(() => {
-    const filteredByTitle = articleData.filter((article) =>
+    const filteredByTitle = data?.filter((article) =>
       article.title.toLowerCase().includes(searchInput.toLowerCase())
     );
 
@@ -21,9 +21,10 @@ const FilteredArticleList = () => {
     }
 
     return filteredByTitle;
-  }, [articleData, searchInput, selectedTags]);
+  }, [data, searchInput, selectedTags]);
 
   return (
+   
     <div className="ml-4">
       <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
       <TagList tags={Object.values(TAGS)} onTagSelected={setSelectedTags} />

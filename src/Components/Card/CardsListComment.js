@@ -1,20 +1,21 @@
 import React from 'react'
-import { CommentData } from "../../data"
+
 import CardComment from './CardComment'
 
-const CardsListComment = () => {
+const CardsListComment = ({ data }) => {
   return (
-    <div>
-      <div className='flex flex-wrap'>
-        {CommentData.map(comment => (
-          <CardComment
-            key={comment.id}
-            name={comment.name}
-            comment={comment.comment}
-          />
-        ))}
+    (typeof data !== "undefined")
+      ? <div>
+        <div className='flex flex-wrap'>
+          {data.map((item) => (
+            <CardComment
+              name={item.name}
+              comment={item[" comment"] || item.comment}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+      : null
   )
 }
 

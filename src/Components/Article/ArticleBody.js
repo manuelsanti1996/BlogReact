@@ -1,22 +1,20 @@
-import { useEffect } from 'react'
+
 import ImageBody from './ImageBody'
 import ParagraphBody from './ParagraphBody'
 import QuoteBody from './QuoteBody'
-import { BODYELEMENT } from '../../Enums'
+
 
 const ArticleBody = ({ data }) => {
 
-    useEffect(() => {
-        console.log(data?.body)
-    }, [data?.body])
+  
 
     const renderBodyElement = (item, index) => {
         switch (item.type) {
-            case BODYELEMENT.IMAGE:
+            case "image":
                 return <ImageBody key={index} image={item.src} />
-            case BODYELEMENT.PARAGRAPH:
+            case "paragraph":
                 return <ParagraphBody key={index} textValue={item.textValue} />
-            case BODYELEMENT.QUOTE:
+            case "quote":
                 return <QuoteBody key={index} text={item.textValue} author={item.author} />
             default:
                 return null

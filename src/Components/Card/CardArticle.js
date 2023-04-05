@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const CardArticle = (props) => {
 
     const { id, title, description, image } = props;
-    console.log(id)
+    
     return (
         <div className=" flex  m-4 ml-0 justify-center items-center">
             <div className=" w-60  bg-white rounded-xl ">
