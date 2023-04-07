@@ -9,9 +9,7 @@ const DrawerContents = () => {
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
             <Link to="/">Home</Link>
           </li>
-          <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
-            <Link to="/createarticle">Crea un Articolo</Link>
-          </li>
+         
           <li className="font-bold text-4xl py-8 px-4 hover:underline" style={{ textDecorationColor: "yellow" }}>
             <Link to="/contacts">Contatti</Link>
           </li>

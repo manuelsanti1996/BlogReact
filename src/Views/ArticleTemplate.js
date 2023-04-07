@@ -4,6 +4,9 @@ import { useEffect, useState } from "react"
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import ArticleBody from '../Components/Article/ArticleBody';
+import ModifyArticle from '../Components/CrudArticles/ModifyArticle';
+import DeleteArticle from '../Components/CrudArticles/DeleteArticle';
+
 
 const CardSection = (props) => {
   const { style, title } = props;
@@ -25,25 +28,25 @@ CardSection.propTypes = {
 const ArticleTemplate = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(undefined);
-  const [datacomments,setDatacomments]= useState(undefined)
+  const [datacomments, setDatacomments] = useState(undefined)
   useEffect(() => {
     const id = searchParams.get("id")
     getDataArticle(parseInt(id));
   }, []);;
 
- useEffect(()=>{
-  getDataComments()
- },[])
+  useEffect(() => {
+    getDataComments()
+  }, [])
 
-const getDataComments = async()=>{
-  const res = await fetch("http://localhost:3000/comments")
-  const datacomment= await res.json()
-  setDatacomments(datacomment)
-}
+  const getDataComments = async () => {
+    const res = await fetch("http://localhost:8000/comments")
+    const datacomment = await res.json()
+    setDatacomments(datacomment)
+  }
 
 
   const getDataArticle = async (id) => {
-    const res = await fetch(`http://localhost:3000/articles?id=${id}`)
+    const res = await fetch(`http://localhost:8000/articles?id=${id}`)
     const data = await res.json()
     setData(data[0]);
   }
@@ -51,8 +54,12 @@ const getDataComments = async()=>{
   return (
     (typeof data !== "undefined")
       ? <div>
-        <div className='py-4 ml-4 mr-4'>
-          <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, }} /></Link>
+        <div className='flex justify-between'>
+        <div className=' m-4'>
+          <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40,marginTop:10 }} /></Link>
+        </div>
+        <ModifyArticle />
+        
         </div>
         <div>
           {data.image && (
@@ -70,8 +77,9 @@ const getDataComments = async()=>{
         <ArticleBody data={data} />
 
         <p className='font-bold text-2xl p-5'>Commenti</p>
-        {datacomments && <CardsListComment data={datacomments}/>}
-
+        
+        {datacomments && <CardsListComment data={datacomments} />}
+        <DeleteArticle />
       </div>
       : null
   )

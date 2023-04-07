@@ -21,12 +21,13 @@ const ArticleBody = ({ data }) => {
         }
     }
 
-    return (
-        <div className="d-flex justify-content-center p-5">
+    return (typeof data !== "undefined"
+        ? <div className="d-flex justify-content-center p-5">
             {data?.body?.map((item, index) => {
                 return renderBodyElement(item, index)
             })}
         </div>
+        :null
     )
 }
 

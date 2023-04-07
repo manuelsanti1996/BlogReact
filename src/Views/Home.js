@@ -14,7 +14,7 @@ const Home = () => {
 
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3000/articles")
+    const res = await fetch("http://localhost:8000/articles")
     const data= await res.json()
     setData(data);
   }

@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
-import { articleData } from "../../data";
+import { Link } from "react-router-dom";
 import { TAGS } from "../../Enums";
 import TagList from "../Tags/TagList";
 import SearchInput from "./SearchInput";
 import CardsList from "../Card/CardsList";
 
-const FilteredArticleList = ({data}) => {
+const FilteredArticleList = ({ data }) => {
   const [searchInput, setSearchInput] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -24,10 +24,14 @@ const FilteredArticleList = ({data}) => {
   }, [data, searchInput, selectedTags]);
 
   return (
-   
+
     <div className="ml-4">
       <SearchInput searchInput={searchInput} setSearchInput={setSearchInput} />
       <TagList tags={Object.values(TAGS)} onTagSelected={setSelectedTags} />
+      <Link to={"/createarticle"} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md my-4 inline-block">
+        Aggiungi Articolo
+      </Link>
+
       <CardsList style="flex flex-wrap " data={filteredArticles} />
     </div>
   );
