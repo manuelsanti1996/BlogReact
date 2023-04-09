@@ -58,7 +58,7 @@ const ArticleTemplate = () => {
           <div className=' m-4'>
             <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, marginTop: 10 }} /></Link>
           </div>
-          <ModifyArticle data={data} />
+          <ModifyArticle />
 
         </div>
         <div>
