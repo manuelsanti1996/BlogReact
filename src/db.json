@@ -186,6 +186,23 @@
       "image": "../images/th.jpg",
       "description": "ddd",
       "tag": "tag2"
+    },
+    {
+      "title": "Motore 4 tempi",
+      "image": "../images/motorebenzina.jpg",
+      "description": "Un motore a 4 tempi è un tipo di motore a combustione interna",
+      "tag": "tag1",
+      "id": 10,
+      "body": [
+        {
+          "type": "paragraph",
+          "textValue": "Un motore a 4 tempi è un tipo di motore a combustione interna che viene comunemente utilizzato in motori a benzina e diesel. Questo tipo di motore funziona attraverso un ciclo di quattro fasi: ammissione, compressione, combustione ed espulsione.  Nella fase di ammissione, una miscela di aria e carburante viene aspirata all'interno del cilindro del motore attraverso una valvola di aspirazione. Successivamente, nella fase di compressione, il pistone del motore si sposta verso l'alto, comprimendo la miscela di aria e carburante.  Nella fase di combustione, la miscela di aria e carburante viene accesa da una scintilla generata dalla candela di accensione, provocando un'esplosione che spinge il pistone verso il basso. Infine, nella fase di espulsione, il pistone si sposta verso l'alto, espellendo i gas di scarico attraverso una valvola di scarico.  Questo ciclo si ripete continuamente per far girare l'albero motore, che a sua volta fa funzionare il veicolo. Grazie alla sua efficienza e al suo funzionamento preciso, il motore a 4 tempi è diventato uno dei motori più comuni al mondo."
+        },
+        {
+          "type": "quote",
+          "textValue": "Una macchina è come una figlia, quando vince una corsa mi sento come il padre che sa che la propria figlia ha preso un bel voto a scuola. (Enzo Ferrari)"
+        }
+      ]
     }
   ],
   "comments": [
