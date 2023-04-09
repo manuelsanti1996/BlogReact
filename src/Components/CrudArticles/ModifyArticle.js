@@ -69,6 +69,7 @@ const ModifyArticle = () => {
       })
   };
 
+
   const renderElementBody = (type, inputValue) => {
     let body = data.body ? [...data.body] : [];
     switch (type) {
