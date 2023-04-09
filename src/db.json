@@ -19,6 +19,10 @@
         {
           "type": "paragraph",
           "textValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere turpis in risus consectetur luctus. Duis ac lobortis sapien. "
+        },
+        {
+          "type": "quote",
+          "textValue": "“Credo che avere la terra e non rovinarla sia la più bella forma d'arte che si possa desiderare.”"
         }
       ]
     },

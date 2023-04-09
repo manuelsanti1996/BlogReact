@@ -55,11 +55,11 @@ const ArticleTemplate = () => {
     (typeof data !== "undefined")
       ? <div>
         <div className='flex justify-between'>
-        <div className=' m-4'>
-          <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40,marginTop:10 }} /></Link>
-        </div>
-        <ModifyArticle />
-        
+          <div className=' m-4'>
+            <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, marginTop: 10 }} /></Link>
+          </div>
+          <ModifyArticle data={data} />
+
         </div>
         <div>
           {data.image && (
@@ -77,7 +77,7 @@ const ArticleTemplate = () => {
         <ArticleBody data={data} />
 
         <p className='font-bold text-2xl p-5'>Commenti</p>
-        
+
         {datacomments && <CardsListComment data={datacomments} />}
         <DeleteArticle />
       </div>
