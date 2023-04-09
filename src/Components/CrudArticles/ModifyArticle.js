@@ -6,6 +6,10 @@ const ModifyArticle = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [description, setDescription] = useState("");
+  const [tag, setTag] = useState("");
 
   useEffect(() => {
     const id = searchParams.get("id");
@@ -40,6 +44,10 @@ const ModifyArticle = () => {
       },
       body: JSON.stringify({
         ...data,
+        title: title,
+        image: image,
+        description: description,
+        tag: tag,
         body: renderElementBody(document.querySelector("select").value, inputValue),
       }),
     })
@@ -52,6 +60,10 @@ const ModifyArticle = () => {
       .then((result) => {
         setData((prevData) => ({
           ...prevData,
+          title: title,
+          image: image,
+          description: description,
+          tag: tag,
           body: renderElementBody(document.querySelector("select").value, inputValue),
         }));
       })
@@ -105,6 +117,51 @@ const ModifyArticle = () => {
                     Chiudi
                   </button>
                 </div>
+                <div className="mt-6">
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Titolo
+                  </label>
+                  <input
+                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    type="text"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+                <div className="mt-6">
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Immagine
+                  </label>
+                  <input
+                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    type="text"
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
+                  />
+                </div>
+                <div className="mt-6">
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Descrizione
+                  </label>
+                  <input
+                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    type="text"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                </div>
+                <div className="mt-6">
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Tag
+                  </label>
+                  <input
+                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    type="text"
+                    value={tag}
+                    onChange={(e) => setTag(e.target.value)}
+                  />
+                </div>
+
                 <div className="mt-6">
                   <label className="block text-gray-700 font-medium mb-2">
                     Tipo di contenuto
