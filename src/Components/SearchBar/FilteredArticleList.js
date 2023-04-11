@@ -11,7 +11,7 @@ const FilteredArticleList = ({ data }) => {
 
   const filteredArticles = useMemo(() => {
     const filteredByTitle = data?.filter((article) =>
-      article.title.toLowerCase().includes(searchInput.toLowerCase())
+      article?.title?.toLowerCase().includes(searchInput.toLowerCase())
     );
 
     if (selectedTags.length > 0) {

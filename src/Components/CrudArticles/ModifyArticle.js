@@ -36,6 +36,7 @@ const ModifyArticle = () => {
     }
   };
 
+
   const modifyArticle = () => {
     fetch(`http://localhost:8000/articles/${data.id}`, {
       method: "PUT",
@@ -88,6 +89,7 @@ const ModifyArticle = () => {
     return body;
   };
 
+ 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -194,6 +196,7 @@ const ModifyArticle = () => {
                   >
                     Modifica
                   </button>
+                  
                 </div>
               </div>
             </div>

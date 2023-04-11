@@ -1,69 +1,100 @@
-import React,{useState,useEffect} from 'react'
-import { useSearchParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const ModifyComment = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [data, setData] = useState(undefined);
-    const [comment, setComment] = useState({
-        name: "",
-        text: "",
-    });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [data, setData] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState(false);
 
-    useEffect(() => {
-        const id = searchParams.get("id")
-        getDataComment(parseInt(id));
-    }, []);;
-    const getDataComment = async (id) => {
-        const res = await fetch(`http://localhost:8000/articles?id=${id}`)
-        const data = await res.json()
-        setData(data[0]);
+  useEffect(() => {
+    const id = searchParams.get('id');
+    getDataArticle(parseInt(id));
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (data) {
+      setComments(data.comment);
     }
-    const handleChange = (e) => {
-        setComment({
-            ...comment,
-            [e.target.name]: e.target.value,
-        });
-    };
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const id = searchParams.get("id")
-        fetch(`http://localhost:8000/articles/${id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(comment),
-        }).then(() => {
-            console.log("Comment modified");
+  }, [data]);
 
-        });
-    };
+  const getDataArticle = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:8000/articles?id=${id}`);
+      if (!res.ok) {
+        console.error('Failed to fetch data');
+        return;
+      }
+      const data = await res.json();
+      setData(data[0]);
+    } catch (error) {
+      console.error('Error fetching data', error);
+    }
+  };
 
+  const handleCommentChange = (index, field, value) => {
+    const updatedComment = { ...comments[index], [field]: value };
+    const updatedComments = [...comments];
+    updatedComments[index] = updatedComment;
+    setComments(updatedComments);
+  };
+
+  const handleSaveChanges = async () => {
+    const id = searchParams.get('id');
+    await fetch(`http://localhost:8000/articles/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...data,
+        comment: comments,
+      }),
+    });
+  };
+
+  const handleClick = () => {
+    setShowComments(!showComments);
+  };
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
-            <input
-                type="text"
-                name="name"
-                id="name"
-                value={comment.name}
-                onChange={handleChange}
-            />
-            <label htmlFor="text">Text</label>
-            <input
-                type="text"
-                name="text"
-                id="text"
-                value={comment.text}
-                onChange={handleChange}
-            />
-            <button>Modify Comment</button> 
-        </form>
-
+    <div className="container mx-auto p-5">
+      <h1 className="text-2xl font-bold mb-4">Modifica Commenti</h1>
+      <button 
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={handleClick}>
+        {showComments ? 'Nascondi commenti' : 'Mostra commenti'}
+      </button>
+      {showComments && (
+        <ul className="mt-4">
+          {comments.map((comment, index) => (
+            <li key={index} className="mb-4">
+              <input
+                className="border rounded py-2 px-4 mr-2"
+                defaultValue={comment.name}
+                onChange={(event) =>
+                  handleCommentChange(index, 'name', event.target.value)
+                }
+              />
+              <input
+                className="border rounded py-2 px-4"
+                defaultValue={comment.text}
+                onChange={(event) =>
+                  handleCommentChange(index, 'text', event.target.value)
+                }
+              />
+            </li>
+          ))}
+        </ul>
+      )}
+      <button 
+        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-4"
+        onClick={handleSaveChanges}>
+        Salva
+      </button>
     </div>
-  )
-}
+  );
 
-export default ModifyComment
+};
+
+export default ModifyComment;

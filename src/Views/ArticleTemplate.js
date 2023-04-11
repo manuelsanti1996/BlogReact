@@ -8,6 +8,8 @@ import ModifyArticle from '../Components/CrudArticles/ModifyArticle';
 import DeleteArticle from '../Components/CrudArticles/DeleteArticle';
 import CardCommentList from '../Components/Comments/CardCommentList';
 import ModifyComment from "../Components/Comments/ModifyComment";
+import CreateComment from "../Components/Comments/CreateComment";
+import Delete from "../Components/Article/DeleteElementBody";
 
 
 const CardSection = (props) => {
@@ -51,7 +53,7 @@ const ArticleTemplate = () => {
             <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, marginTop: 10 }} /></Link>
           </div>
           <ModifyArticle />
-
+          <Delete />
         </div>
         <div>
           {data.image && (
@@ -69,8 +71,9 @@ const ArticleTemplate = () => {
         <ArticleBody data={data} />
         <p className='font-bold text-2xl p-5'>Commenti</p>    
         <CardCommentList data={data} />
-        <DeleteArticle />
         <ModifyComment />
+        <CreateComment />
+        <DeleteArticle />
       </div>
       : null
   )

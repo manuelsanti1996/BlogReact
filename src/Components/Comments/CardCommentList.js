@@ -4,7 +4,7 @@ import CardComment from './CardComment'
 const CardCommentList = ({data}) => {
     return (
         <div className="comment-list">
-        {data?.comment.map((comment) => (
+        {data?.comment?.map((comment) => (
             <CardComment
             key={comment.id}
             name={comment.name}
