@@ -5,9 +5,8 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import ArticleBody from '../Components/Article/ArticleBody';
 import ModifyArticle from '../Components/CrudArticles/ModifyArticle';
-import ModifyComment from '../Components/CrudArticles/ModifyComment';
 import DeleteArticle from '../Components/CrudArticles/DeleteArticle';
-import CreateComment from '../Components/CrudArticles/CreateComment';
+
 
 
 const CardSection = (props) => {
@@ -81,8 +80,7 @@ const ArticleTemplate = () => {
         <p className='font-bold text-2xl p-5'>Commenti</p>
 
         {datacomments && <CardsListComment data={datacomments} />}
-        <ModifyComment />
-        <CreateComment />
+       
         
         <DeleteArticle />
       </div>
