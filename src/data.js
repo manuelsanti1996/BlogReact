@@ -213,28 +213,3 @@ export const articleData = [
     },
 ];
 
-export const CommentData = [
-    {
-        name: "Maria",
-        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-        name: "Giovanni",
-        comment: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
-    },
-    {
-        name: "Paolo",
-        comment: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-        name: "Luisa",
-        comment: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        name: "Marco",
-        comment: "Maecenas aliquet tortor eget ligula ullamcorper, eget lobortis purus tincidunt."
-    },
-];
-
-
-

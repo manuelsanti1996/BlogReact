@@ -6,6 +6,20 @@
       "description": "sed id faciam",
       "image": "../images/images.jpg",
       "tag": "tag2",
+      "comment": [
+        {
+          "name": "pippo",
+          "text": "commento di pippo"
+        },
+        {
+          "name": "pluto",
+          "text": "commento di pluto"
+        },
+        {
+          "name": "paperino",
+          "text": "commento di paperino"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -32,6 +46,20 @@
       "description": "iniquit",
       "image": "../images/cardarticle.jpg",
       "tag": "tag3",
+      "comment": [
+        {
+          "name": "John",
+          "text": "John's comment"
+        },
+        {
+          "name": "Jane",
+          "text": "Jane's comment"
+        },
+        {
+          "name": "Bob",
+          "text": "Bob's comment"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -49,26 +77,9 @@
       ]
     },
     {
-      "id": 4,
-      "title": "Articolo 4 ",
-      "description": "lorem ipsum",
-      "image": "../images/pompa-idraulica_NG1.jpg",
-      "tag": "tag1",
-      "body": [
-        {
-          "type": "quote",
-          "textValue": "The only true wisdom is in knowing you know nothing.",
-          "author": "Socrates"
-        },
-        {
-          "type": "image",
-          "src": "../images/3.jpg"
-        },
-        {
-          "type": "paragraph",
-          "textValue": "Donec malesuada nisi nec sagittis maximus. Nulla facilisi. Nullam id urna id augue efficitur luctus in vel mi. "
-        }
-      ]
+      "name": "sara",
+      "text": "",
+      "id": 4
     },
     {
       "id": 5,
@@ -76,6 +87,20 @@
       "description": "sed id faciam",
       "image": "../images/images.jpg",
       "tag": "tag4",
+      "comment": [
+        {
+          "name": "Alex",
+          "text": "Alex's comment"
+        },
+        {
+          "name": "Ben",
+          "text": "Ben's comment"
+        },
+        {
+          "name": "Charlie",
+          "text": "Charlie's comment"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -98,6 +123,20 @@
       "description": "iniquit",
       "image": "../images/po.gif",
       "tag": "tag1",
+      "comment": [
+        {
+          "name": "Tom",
+          "text": "Tom's comment"
+        },
+        {
+          "name": "Jerry",
+          "text": "Jerry's comment"
+        },
+        {
+          "name": "Spike",
+          "text": "Spike's comment"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -120,6 +159,20 @@
       "description": "d",
       "image": "../images/c.png",
       "tag": "tag3",
+      "comment": [
+        {
+          "name": "Sam",
+          "text": "Sam's comment"
+        },
+        {
+          "name": "Max",
+          "text": "Max's comment"
+        },
+        {
+          "name": "Alexa",
+          "text": "Alexa's comment"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -142,6 +195,20 @@
       "description": "b",
       "image": "../images/images.jpg",
       "tag": "tag3",
+      "comment": [
+        {
+          "name": "Jack",
+          "text": "Jack's comment"
+        },
+        {
+          "name": "Jill",
+          "text": "Jill's comment"
+        },
+        {
+          "name": "Adam",
+          "text": "Adam's comment"
+        }
+      ],
       "body": [
         {
           "type": "quote",
@@ -164,6 +231,20 @@
       "description": "Un motore a 4 tempi è un tipo di motore a combustione interna",
       "tag": "tag1",
       "id": 10,
+      "comment": [
+        {
+          "name": "Lucy",
+          "text": "Lucy's comment"
+        },
+        {
+          "name": "Mike",
+          "text": "Mike's comment"
+        },
+        {
+          "name": "Rachel",
+          "text": "Rachel's comment"
+        }
+      ],
       "body": [
         {
           "type": "paragraph",
@@ -174,38 +255,6 @@
           "textValue": "Una macchina è come una figlia, quando vince una corsa mi sento come il padre che sa che la propria figlia ha preso un bel voto a scuola. (Enzo Ferrari)"
         }
       ]
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "name": "Maria",
-      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-      "id": "2",
-      "name": "Giovanni",
-      "comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
-    },
-    {
-      "id": "3",
-      "name": "Lorenzo",
-      "comment": "Chiarire quale può essere l'intenzione comunicativa dell'autore, il messaggio che desidera trasmettere"
-    },
-    {
-      "id": "4",
-      "name": "Luisa",
-      "comment": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      "id": "5",
-      "name": "Marco",
-      "comment": "Maecenas aliquet tortor eget ligula ullamcorper, eget lobortis purus tincidunt."
-    },
-    {
-      "id": "10",
-      "name": "Manuel ",
-      "comments": "Fare il commento di una poesia significa comprendere il messaggio del testo ed esprimere per iscritto una interpretazione complessiva"
     }
   ]
 }
