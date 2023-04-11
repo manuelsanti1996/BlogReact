@@ -9,8 +9,8 @@ const CardsListComment = ({ data }) => {
         <div className='flex flex-wrap'>
           {data.map((item) => (
             <CardComment
-              name={item.name}
-              comment={item[" comment"] || item.comment}
+              name={item?.name}
+              comment={item?.comment}
             />
           ))}
         </div>

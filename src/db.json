@@ -159,28 +159,6 @@
       ]
     },
     {
-      "id": 9,
-      "title": "Articolo 9",
-      "description": "c",
-      "image": "../images/cardarticle.jpg",
-      "tag": "tag1",
-      "body": [
-        {
-          "type": "quote",
-          "textValue": "You miss 100% of the shots you don't take.",
-          "author": "Wayne Gretzky"
-        },
-        {
-          "type": "image",
-          "src": "../images/8.jpg"
-        },
-        {
-          "type": "paragraph",
-          "textValue": "Morbi commodo sapien vel nunc rutrum, ac commodo arcu pretium. Sed commodo venenatis enim, a auctor sapien facilisis ut. "
-        }
-      ]
-    },
-    {
       "id": "1",
       "title": "Antonio",
       "image": "../images/th.jpg",
@@ -214,22 +192,27 @@
     {
       "id": "2",
       "name": "Giovanni",
-      " comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
+      "comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem."
     },
     {
       "id": "3",
-      "name": "Paolo",
-      " comment": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      "name": "Lorenzo",
+      "comment": "Chiarire quale può essere l'intenzione comunicativa dell'autore, il messaggio che desidera trasmettere"
     },
     {
       "id": "4",
       "name": "Luisa",
-      " comment": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "comment": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": "5",
       "name": "Marco",
-      " comment": "Maecenas aliquet tortor eget ligula ullamcorper, eget lobortis purus tincidunt."
+      "comment": "Maecenas aliquet tortor eget ligula ullamcorper, eget lobortis purus tincidunt."
+    },
+    {
+      "id": "10",
+      "name": "Manuel ",
+      "comments": "Fare il commento di una poesia significa comprendere il messaggio del testo ed esprimere per iscritto una interpretazione complessiva"
     }
   ]
 }
