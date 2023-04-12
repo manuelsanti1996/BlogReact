@@ -46,6 +46,10 @@ const DeleteArticle = () => {
         navigate('/');
       });
   };
+
+
+
+
   return (
     <>
       <button

@@ -10,7 +10,7 @@ import CardCommentList from '../Components/Comments/CardCommentList';
 import ModifyComment from "../Components/Comments/ModifyComment";
 import CreateComment from "../Components/Comments/CreateComment";
 import Delete from "../Components/Article/DeleteElementBody";
-
+import DeleteComment from "../Components/Comments/DeleteComment";
 
 const CardSection = (props) => {
   const { style, title } = props;
@@ -37,7 +37,7 @@ const ArticleTemplate = () => {
     getDataArticle(parseInt(id));
   }, []);;
 
- 
+
 
   const getDataArticle = async (id) => {
     const res = await fetch(`http://localhost:8000/articles?id=${id}`)
@@ -53,7 +53,7 @@ const ArticleTemplate = () => {
             <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, marginTop: 10 }} /></Link>
           </div>
           <ModifyArticle />
-          <Delete />
+
         </div>
         <div>
           {data.image && (
@@ -68,11 +68,13 @@ const ArticleTemplate = () => {
           title={data.title}
           style={{ backgroundColor: 'white', padding: '20px', borderRadius: '5px' }}
         />
+        <Delete />
         <ArticleBody data={data} />
-        <p className='font-bold text-2xl p-5'>Commenti</p>    
+        <p className='font-bold text-2xl p-5'>Commenti</p>
         <CardCommentList data={data} />
         <ModifyComment />
         <CreateComment />
+        <DeleteComment />
         <DeleteArticle />
       </div>
       : null
