@@ -10,13 +10,13 @@ const DeleteElementBody = () => {
     useEffect(() => {
         const id = searchParams.get("id");
         getDataArticle(parseInt(id));
+        const intervalId = setInterval(() => {
+            getDataArticle(parseInt(id));
+        }, 500);
+        return () => clearInterval(intervalId);
+
     }, [searchParams]);
 
-    useEffect(() => {
-        if (data) {
-            console.log(data);
-        }
-    }, [data]);
 
     const getDataArticle = async (id) => {
         try {

@@ -35,8 +35,11 @@ const ArticleTemplate = () => {
   useEffect(() => {
     const id = searchParams.get("id")
     getDataArticle(parseInt(id));
+    const intervalId = setInterval(() => {
+      getDataArticle(parseInt(id));
+    }, 500);
+    return () => clearInterval(intervalId);
   }, []);;
-
 
 
   const getDataArticle = async (id) => {
