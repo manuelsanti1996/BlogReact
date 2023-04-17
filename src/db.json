@@ -94,6 +94,10 @@
         {
           "name": "Charlie",
           "text": "Charlie's comment"
+        },
+        {
+          "name": "V14 bot",
+          "text": "M S"
         }
       ],
       "body": [
@@ -227,10 +231,6 @@
       "tag": "tag1",
       "id": 10,
       "comment": [
-        {
-          "name": "Lucy",
-          "text": "Lucy's comment"
-        },
         {
           "name": "Mike",
           "text": "Mike's comment"

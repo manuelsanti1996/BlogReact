@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const DeleteElementBody = () => {
+const DeleteComment = () => {
     const [data, setData] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const [selected, setSelected] = useState(null);
@@ -10,13 +10,7 @@ const DeleteElementBody = () => {
     useEffect(() => {
         const id = searchParams.get("id");
         getDataArticle(parseInt(id));
-        const intervalId = setInterval(() => {
-            getDataArticle(parseInt(id));
-        }, 500);
-        return () => clearInterval(intervalId);
-
     }, [searchParams]);
-
 
     const getDataArticle = async (id) => {
         try {
@@ -27,29 +21,45 @@ const DeleteElementBody = () => {
             }
             const data = await res.json();
             setData(data[0]);
+
         } catch (error) {
             console.error("Error fetching data", error);
         }
     };
 
-    const deleteElement = () => {
-        fetch(`http://localhost:8000/articles/${data.id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                ...data,
-                comment: data.comment.filter((element) => element.name !== selected),
-            }),
-        })
-            .then((res) =>
-                setData({
+
+    const deleteElement = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch(`http://localhost:8000/articles/${data.id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
                     ...data,
                     comment: data.comment.filter((element) => element.name !== selected),
-                })
-            );
+                }),
+            });
+            if (!res.ok) {
+                throw new Error("Failed to delete element");
+            }
+            const newData = {
+                ...data,
+                comment: data.comment.filter((element) => element.name !== selected),
+            };
+            setData(newData);
+        } catch (error) {
+            console.error("Error deleting element", error);
+        }
     };
+
+
+
+
+
+
+
 
     return (
         <div className="p-5">
@@ -64,10 +74,13 @@ const DeleteElementBody = () => {
                     >
                         <option value="">select Comment</option>
                         {data?.comment?.map((element) => (
-                            <option key={element.id} value={element.name}>
+
+                            <option value={element.name}>
                                 {element.name}
                             </option>
+
                         ))}
+
                     </select>
                 </div>
             </div>
@@ -82,4 +95,4 @@ const DeleteElementBody = () => {
     );
 };
 
-export default DeleteElementBody;
+export default DeleteComment;

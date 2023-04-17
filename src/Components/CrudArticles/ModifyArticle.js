@@ -17,10 +17,9 @@ const ModifyArticle = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
+    console.log(data);
   }, [data]);
+
 
   const getDataArticle = async (id) => {
     try {
@@ -89,7 +88,7 @@ const ModifyArticle = () => {
     return body;
   };
 
- 
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -196,7 +195,7 @@ const ModifyArticle = () => {
                   >
                     Modifica
                   </button>
-                  
+
                 </div>
               </div>
             </div>

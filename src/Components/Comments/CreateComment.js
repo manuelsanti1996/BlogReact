@@ -14,11 +14,6 @@ const AddComment = () => {
     getDataArticle(parseInt(id));
   }, [searchParams]);
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
 
   const getDataArticle = async (id) => {
     try {

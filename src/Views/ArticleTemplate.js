@@ -32,21 +32,31 @@ CardSection.propTypes = {
 const ArticleTemplate = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(undefined);
-  useEffect(() => {
-    const id = searchParams.get("id")
-    getDataArticle(parseInt(id));
-    const intervalId = setInterval(() => {
-      getDataArticle(parseInt(id));
-    }, 500);
-    return () => clearInterval(intervalId);
-  }, []);;
 
+
+  useEffect(() => {
+    const id = searchParams.get("id");
+    getDataArticle(parseInt(id));
+    const interval = setInterval(() => {
+      getDataArticle(parseInt(id));
+    }
+      , 500);
+    return () => clearInterval(interval);
+  }, [searchParams]);
 
   const getDataArticle = async (id) => {
     const res = await fetch(`http://localhost:8000/articles?id=${id}`)
     const data = await res.json()
     setData(data[0]);
   }
+
+
+
+
+
+
+
+
 
   return (
     (typeof data !== "undefined")
@@ -55,7 +65,7 @@ const ArticleTemplate = () => {
           <div className=' m-4'>
             <Link to="/"><img src='../../images/logo.jpeg' alt='' style={{ height: 40, width: 40, marginTop: 10 }} /></Link>
           </div>
-          <ModifyArticle />
+          <ModifyArticle data={data} setData={setData} />
 
         </div>
         <div>
@@ -76,8 +86,10 @@ const ArticleTemplate = () => {
         <p className='font-bold text-2xl p-5'>Commenti</p>
         <CardCommentList data={data} />
         <ModifyComment />
-        <CreateComment />
-        <DeleteComment />
+        <CreateComment
+        />
+        <DeleteComment
+        />
         <DeleteArticle />
       </div>
       : null
