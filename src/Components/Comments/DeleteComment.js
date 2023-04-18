@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const DeleteComment = () => {
+
+
+
+const DeleteComment = (props) => {
     const [data, setData] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const [selected, setSelected] = useState(null);
-    const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => {
         const id = searchParams.get("id");
         getDataArticle(parseInt(id));
     }, [searchParams]);
-
-    useEffect(() => {
-        if (isDeleted) {
-            const id = searchParams.get("id");
-            getDataArticle(parseInt(id));
-            console.log("Elemento cancellato, reindirizzamento in corso...");
-        }
-    }, [isDeleted]);
 
     const getDataArticle = async (id) => {
         try {
@@ -48,7 +43,9 @@ const DeleteComment = () => {
                 },
                 body: JSON.stringify({
                     ...data,
-                    comment: data.comment.filter((element) => element.name !== selected),
+                    comment: data.comment.filter(
+                        (element) => element.name !== selected
+                    ),
                 }),
             });
             if (!res.ok) {
@@ -56,22 +53,18 @@ const DeleteComment = () => {
             }
             const newData = {
                 ...data,
-                comment: data.comment.filter((element) => element.name !== selected),
+                comment: data.comment.filter(
+                    (element) => element.name !== selected
+                ),
             };
             setData(newData);
-            setIsDeleted(true);
+            console.log("Elemento cancellato");
+            props.onCommentDeleted();
         } catch (error) {
             console.error("Error deleting element", error);
         }
     };
 
-    useEffect(() => {
-        if (isDeleted) {
-            const id = searchParams.get("id");
-            getDataArticle(parseInt(id));
-            console.log("Elemento cancellato, reindirizzamento in corso...");
-        }
-    }, [isDeleted]);
     return (
         <div className="p-5">
             <div className="flex flex-col">
@@ -85,7 +78,9 @@ const DeleteComment = () => {
                     >
                         <option value="">select Comment</option>
                         {data?.comment?.map((element) => (
-                            <option value={element.name}>{element.name}</option>
+                            <option key={element.name} value={element.name}>
+                                {element.name}
+                            </option>
                         ))}
                     </select>
                 </div>
@@ -97,7 +92,7 @@ const DeleteComment = () => {
             >
                 Delete Element
             </button>
-        </div >
+        </div>
     );
 };
 

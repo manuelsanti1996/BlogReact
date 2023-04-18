@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const ModifyComment = () => {
+const ModifyComment = (props) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(null);
   const [comments, setComments] = useState([]);
@@ -50,6 +50,10 @@ const ModifyComment = () => {
         ...data,
         comment: comments,
       }),
+    }).then(() => {
+
+      window.location.reload();
+
     });
   };
 
@@ -60,7 +64,7 @@ const ModifyComment = () => {
   return (
     <div className="container mx-auto p-5">
       <h1 className="text-2xl font-bold mb-4">Modifica Commenti</h1>
-      <button 
+      <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={handleClick}>
         {showComments ? 'Nascondi commenti' : 'Mostra commenti'}
@@ -87,7 +91,7 @@ const ModifyComment = () => {
           ))}
         </ul>
       )}
-      <button 
+      <button
         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-4"
         onClick={handleSaveChanges}>
         Salva

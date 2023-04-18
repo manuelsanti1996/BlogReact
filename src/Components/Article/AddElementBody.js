@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const AddBody = () => {
+const AddBody = (props) => {
     const [data, setData] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const [inputValue, setInputValue] = useState("");
@@ -13,9 +13,6 @@ const AddBody = () => {
         getDataArticle(parseInt(id));
     }, [searchParams]);
 
-    useEffect(() => {
-        console.log("data", data);
-    }, [data]);
 
     const getDataArticle = async (id) => {
         try {
@@ -57,6 +54,7 @@ const AddBody = () => {
             };
             setData(newData);
             setInputValue("");
+            props.OnAddElementBody();
         } catch (error) {
             console.error("Error fetching data", error);
         }

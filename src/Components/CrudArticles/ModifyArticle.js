@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const ModifyArticle = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(undefined);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [inputValue, setInputValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
@@ -63,6 +62,7 @@ const ModifyArticle = () => {
           tag: tag,
 
         }));
+        window.location.reload();
       })
   };
 

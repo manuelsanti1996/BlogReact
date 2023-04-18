@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const DeleteElementBody = () => {
+const DeleteElementBody = (props) => {
   const [data, setData] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [selected, setSelected] = useState(null);
@@ -15,6 +15,7 @@ const DeleteElementBody = () => {
 
 
   const getDataArticle = async (id) => {
+
     try {
       const res = await fetch(`http://localhost:8000/articles?id=${id}`);
       if (!res.ok) {
@@ -28,24 +29,44 @@ const DeleteElementBody = () => {
     }
   };
 
-  const deleteElement = () => {
-    fetch(`http://localhost:8000/articles/${data.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        ...data,
-        body: data.body.filter((element) => element.type !== selected),
-      }),
-    })
-      .then((res) =>
-        setData({
-          ...data,
-          body: data.body.filter((element) => element.type !== selected),
-        })
 
-      )
+
+
+  const DeleteElement = async (e) => {
+    e.preventDefault();
+    if (!selected) {
+      console.log("Please select a comment");
+      return;
+    }
+    try {
+
+      const res = await fetch(`http://localhost:8000/articles/${data.id}`, {
+
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          body: data.body.filter(
+            (element) => element.type !== selected
+          ),
+        }),
+      });
+      if (!res.ok) {
+        throw new Error("Failed to delete element");
+      }
+      const newData = {
+        ...data,
+        body: data.body.filter(
+          (element) => element.type !== selected
+        ),
+      };
+      setData(newData);
+      props.OnDeleteElementBody();
+    } catch (error) {
+      console.error("Error deleting element", error);
+    }
   };
 
 
@@ -65,7 +86,7 @@ const DeleteElementBody = () => {
         >
           <option value="">Select Element</option>
           {data?.body?.map((element) => (
-            <option key={element.id} value={element.id}>
+            <option key={element.id}>
               {element.type}
             </option>
           ))}
@@ -74,8 +95,9 @@ const DeleteElementBody = () => {
 
       <button
         class="px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        onClick={deleteElement}
+        onClick={DeleteElement}
       >
+
         Delete Element
       </button>
     </div>

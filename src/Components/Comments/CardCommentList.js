@@ -1,4 +1,4 @@
-
+import React, { useEffect } from 'react'
 import CardComment from './CardComment'
 
 
@@ -8,6 +8,7 @@ const CardCommentList = ({ data }) => {
 
     return (
         <div className="comment-list">
+
             {data?.comment?.map((comment) => (
                 <CardComment
                     key={comment.id}

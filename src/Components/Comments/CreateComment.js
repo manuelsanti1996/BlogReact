@@ -1,26 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const AddComment = () => {
+const AddComment = (props) => {
   const [data, setData] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [name, setName] = useState(null);
   const [text, setText] = useState(null);
 
-
-
   useEffect(() => {
     const id = searchParams.get("id");
     getDataArticle(parseInt(id));
   }, [searchParams]);
-
-
-
-
-
-
-
-
 
 
   const getDataArticle = async (id) => {
@@ -32,10 +22,18 @@ const AddComment = () => {
       }
       const data = await res.json();
       setData(data[0]);
+
+
+
     } catch (error) {
       console.error("Error fetching data", error);
     }
   };
+
+
+
+
+
 
   const AddElement = async () => {
     let updatedData = { comment: [] };
@@ -48,7 +46,7 @@ const AddComment = () => {
     updatedData.comment.push({ name, text });
 
     try {
-      const res = await fetch(`http://localhost:8000/articles/${data?.id || ""}`, {
+      const res = await fetch(`http://localhost:8000/articles/${data.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -57,16 +55,18 @@ const AddComment = () => {
       });
 
       if (!res.ok) {
-        console.error("Failed to update data");
-        return;
-
+        throw new Error("Failed to update data");
       }
-
+      const newData = {
+        ...data,
+        comment: updatedData.comment,
+      };
+      setData(newData);
+      props.onCommentCreated();
     } catch (error) {
       console.error("Error updating data", error);
     }
   };
-
 
 
   return (

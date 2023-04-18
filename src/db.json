@@ -2,30 +2,12 @@
   "articles": [
     {
       "id": 2,
-      "title": "Articolo 2",
-      "description": "sed id faciam",
-      "image": "../images/images.jpg",
-      "tag": "tag2",
-      "comment": [
-        {
-          "name": "pippo",
-          "text": "commento di pippo"
-        },
-        {
-          "name": "pluto",
-          "text": "commento di pluto"
-        },
-        {
-          "name": "paperino",
-          "text": "commento di paperino"
-        }
-      ],
+      "title": "aaaaaaaaaaa",
+      "description": "aaa",
+      "image": "aa",
+      "tag": "tag1",
+      "comment": [],
       "body": [
-        {
-          "type": "quote",
-          "textValue": "The best way to predict the future is to invent it.",
-          "author": "Alan Kay"
-        },
         {
           "type": "image",
           "src": "../images/1.jpg"
@@ -36,7 +18,11 @@
         },
         {
           "type": "quote",
-          "textValue": "“Credo che avere la terra e non rovinarla sia la più bella forma d'arte che si possa desiderare.”"
+          "textValue": "Oggi è stata una fantastica giornata"
+        },
+        {
+          "type": "quote",
+          "textValue": "Oggi è stata una fantastica giornata"
         }
       ]
     },
