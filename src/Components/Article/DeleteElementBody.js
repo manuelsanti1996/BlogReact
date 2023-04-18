@@ -54,35 +54,33 @@ const DeleteElementBody = () => {
 
 
   return (
-    <div className="p-5">
-      <h2>Delete Element Body</h2>
+    <div class="p-5">
+      <h2 class="text-lg font-bold mb-4">Delete Element Body</h2>
 
-      <div className="flex flex-col">
-        <div className="flex flex-col">
-          <label className="text-sm font-bold text-gray-700 tracking-wide">
-            Select Element
-          </label>
-          <select
-            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500"
-            onChange={(e) => setSelected(e.target.value)}
-          >
-            <option value="">Select Element</option>
-            {data?.body?.map((element) => (
-              <option key={element.id} value={element.id}>
-                {element.type}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div class="flex flex-col mb-4">
+        <label class="text-sm font-bold text-gray-700 mb-2">Select Element</label>
+        <select
+          class="block w-full px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:border-blue-500"
+          onChange={(e) => setSelected(e.target.value)}
+        >
+          <option value="">Select Element</option>
+          {data?.body?.map((element) => (
+            <option key={element.id} value={element.id}>
+              {element.type}
+            </option>
+          ))}
+        </select>
       </div>
 
       <button
-        className="px-4 py-2 mt-5 text-white bg-blue-500 rounded hover:bg-blue-600"
+        class="px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
         onClick={deleteElement}
       >
         Delete Element
       </button>
     </div>
+
+
   );
 };
 

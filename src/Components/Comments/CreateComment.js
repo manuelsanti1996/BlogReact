@@ -15,6 +15,14 @@ const AddComment = () => {
   }, [searchParams]);
 
 
+
+
+
+
+
+
+
+
   const getDataArticle = async (id) => {
     try {
       const res = await fetch(`http://localhost:8000/articles?id=${id}`);
@@ -30,11 +38,17 @@ const AddComment = () => {
   };
 
   const AddElement = async () => {
-    const updatedData = { ...data };
+    let updatedData = { comment: [] };
+    if (data) {
+      updatedData = { ...data };
+      if (!updatedData.comment) {
+        updatedData.comment = [];
+      }
+    }
     updatedData.comment.push({ name, text });
 
     try {
-      const res = await fetch(`http://localhost:8000/articles/${data.id}`, {
+      const res = await fetch(`http://localhost:8000/articles/${data?.id || ""}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -45,15 +59,15 @@ const AddComment = () => {
       if (!res.ok) {
         console.error("Failed to update data");
         return;
+
       }
 
-      setData(updatedData);
-      setName("");
-      setText("");
     } catch (error) {
       console.error("Error updating data", error);
     }
   };
+
+
 
   return (
     <div className="p-5">
@@ -87,6 +101,7 @@ const AddComment = () => {
         <div className="flex flex-col mt-2">
           <button
             className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+            type="button"
             onClick={AddElement}
           >
             Add Comment

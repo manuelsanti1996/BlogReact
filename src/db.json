@@ -48,10 +48,6 @@
       "tag": "tag3",
       "comment": [
         {
-          "name": "John",
-          "text": "John's comment"
-        },
-        {
           "name": "Jane",
           "text": "Jane's comment"
         },
@@ -60,21 +56,7 @@
           "text": "Bob's comment"
         }
       ],
-      "body": [
-        {
-          "type": "quote",
-          "textValue": "If you can't explain it simply, you don't understand it well enough.",
-          "author": "Albert Einstein"
-        },
-        {
-          "type": "image",
-          "src": "../images/2.jpg"
-        },
-        {
-          "type": "paragraph",
-          "textValue": "Maecenas tincidunt eros a nisl iaculis sagittis. Aliquam sed diam ut nibh consectetur efficitur eu ut augue. "
-        }
-      ]
+      "body": []
     },
     {
       "id": 5,

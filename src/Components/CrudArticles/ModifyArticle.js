@@ -16,9 +16,7 @@ const ModifyArticle = () => {
     getDataArticle(parseInt(id));
   }, [searchParams]);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+
 
 
   const getDataArticle = async (id) => {
@@ -48,7 +46,6 @@ const ModifyArticle = () => {
         image: image,
         description: description,
         tag: tag,
-        body: renderElementBody(document.querySelector("select").value, inputValue),
       }),
     })
       .then((res) => {
@@ -64,34 +61,14 @@ const ModifyArticle = () => {
           image: image,
           description: description,
           tag: tag,
-          body: renderElementBody(document.querySelector("select").value, inputValue),
+
         }));
       })
   };
 
 
-  const renderElementBody = (type, inputValue) => {
-    let body = data.body ? [...data.body] : [];
-    switch (type) {
-      case "image":
-        body.push({ type: "image", src: inputValue });
-        break;
-      case "paragraph":
-        body.push({ type: "paragraph", textValue: inputValue });
-        break;
-      case "quote":
-        body.push({ type: "quote", textValue: inputValue });
-        break;
-      default:
-        break;
-    }
-    return body;
-  };
 
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -161,31 +138,6 @@ const ModifyArticle = () => {
                     type="text"
                     value={tag}
                     onChange={(e) => setTag(e.target.value)}
-                  />
-                </div>
-
-                <div className="mt-6">
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Tipo di contenuto
-                  </label>
-                  <select
-                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-
-                  >
-                    <option value="image">Immagine</option>
-                    <option value="paragraph">Paragrafo</option>
-                    <option value="quote">Citazione</option>
-                  </select>
-                </div>
-                <div className="mt-6">
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Contenuto
-                  </label>
-                  <input
-                    className="block w-full rounded-md border-gray-300 shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="mt-6">

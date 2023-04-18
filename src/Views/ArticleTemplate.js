@@ -11,6 +11,7 @@ import ModifyComment from "../Components/Comments/ModifyComment";
 import CreateComment from "../Components/Comments/CreateComment";
 import Delete from "../Components/Article/DeleteElementBody";
 import DeleteComment from "../Components/Comments/DeleteComment";
+import AddBody from "../Components/Article/AddElementBody";
 
 const CardSection = (props) => {
   const { style, title } = props;
@@ -37,11 +38,6 @@ const ArticleTemplate = () => {
   useEffect(() => {
     const id = searchParams.get("id");
     getDataArticle(parseInt(id));
-    const interval = setInterval(() => {
-      getDataArticle(parseInt(id));
-    }
-      , 500);
-    return () => clearInterval(interval);
   }, [searchParams]);
 
   const getDataArticle = async (id) => {
@@ -49,7 +45,6 @@ const ArticleTemplate = () => {
     const data = await res.json()
     setData(data[0]);
   }
-
 
 
 
@@ -82,14 +77,15 @@ const ArticleTemplate = () => {
           style={{ backgroundColor: 'white', padding: '20px', borderRadius: '5px' }}
         />
         <Delete />
+        <AddBody />
         <ArticleBody data={data} />
         <p className='font-bold text-2xl p-5'>Commenti</p>
         <CardCommentList data={data} />
         <ModifyComment />
-        <CreateComment
-        />
-        <DeleteComment
-        />
+        <CreateComment />
+
+        <DeleteComment />
+
         <DeleteArticle />
       </div>
       : null
