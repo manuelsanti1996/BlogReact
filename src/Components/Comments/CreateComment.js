@@ -73,27 +73,30 @@ const AddComment = (props) => {
     <div className="p-5">
       <div className="flex flex-col">
         <div className="flex flex-col">
+          <label className="text-sm font-bold mb-2 text-gray-700 tracking-wide">
+            Aggiungi Commento
+          </label>
           <label className="text-sm font-bold text-gray-700 tracking-wide">
-            Name
+            Nome
           </label>
           <input
             className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="name"
             type="text"
-            placeholder="Name"
+            placeholder="Nome"
             value={name || ""}
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="flex flex-col mt-2">
           <label className="text-sm font-bold text-gray-700 tracking-wide">
-            Text
+            Testo
           </label>
           <input
             className="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
             id="text"
             type="text"
-            placeholder="Text"
+            placeholder="Testo"
             value={text || ""}
             onChange={(e) => setText(e.target.value)}
           />
@@ -104,7 +107,7 @@ const AddComment = (props) => {
             type="button"
             onClick={AddElement}
           >
-            Add Comment
+            Crea
           </button>
         </div>
       </div>

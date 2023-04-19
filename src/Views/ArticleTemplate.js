@@ -32,6 +32,8 @@ const ArticleTemplate = () => {
     )
   }
 
+
+
   const DataFunction = () => getDataArticle(data.id)
 
   return (
@@ -57,11 +59,14 @@ const ArticleTemplate = () => {
           title={data.title}
           style={{ backgroundColor: 'white', padding: '20px', borderRadius: '5px' }}
         />
+
+        <ArticleBody data={data} />
+        <p className='font-bold text-2xl p-5'>Sezione di Modifica Elementi</p>
         <Delete OnDeleteElementBody={DataFunction} />
         <AddBody OnAddElementBody={DataFunction} />
-        <ArticleBody data={data} />
         <p className='font-bold text-2xl p-5'>Commenti</p>
         <CardCommentList data={data} />
+        <p className='font-bold text-2xl p-5'>Sezione di Modifica Commenti</p>
         <AddComment onCommentCreated={DataFunction} />
         <ModifyComment onCommentModify={DataFunction} />
         <DeleteComment onCommentDeleted={DataFunction} />

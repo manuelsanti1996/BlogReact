@@ -76,15 +76,14 @@ const DeleteElementBody = (props) => {
 
   return (
     <div class="p-5">
-      <h2 class="text-lg font-bold mb-4">Delete Element Body</h2>
+      <h2 class="text-sm font-bold mb-4 text-gray-700">Elimina un elemento</h2>
 
       <div class="flex flex-col mb-4">
-        <label class="text-sm font-bold text-gray-700 mb-2">Select Element</label>
         <select
           class="block w-full px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:border-blue-500"
           onChange={(e) => setSelected(e.target.value)}
         >
-          <option value="">Select Element</option>
+          <option value="">Seleziona</option>
           {data?.body?.map((element) => (
             <option key={element.id}>
               {element.type}
@@ -98,7 +97,7 @@ const DeleteElementBody = (props) => {
         onClick={DeleteElement}
       >
 
-        Delete Element
+        Elimina
       </button>
     </div>
 

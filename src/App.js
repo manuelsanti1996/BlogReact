@@ -1,6 +1,4 @@
-import Archive from './Views/Archive';
 import ArticleTemplate from './Views/ArticleTemplate';
-import Contacts from './Views/Contacts';
 import Home from './Views/Home';
 import CreateArticle from './Components/CrudArticles/CreateArticle'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';

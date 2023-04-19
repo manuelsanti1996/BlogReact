@@ -104,23 +104,24 @@ const AddBody = (props) => {
     };
 
     return (
-        <div class="my-4 p-5">
+        <div class="p-5">
+            <h2 class="text-sm font-bold mb-4 text-gray-700">Crea un elemento</h2>
             <form class="flex flex-col space-y-4" onSubmit={AddElementBody}>
                 <div class="flex flex-col md:flex-row md:space-x-4">
-                    <label class="text-gray-700 font-bold md:w-1/4 self-center" htmlFor="type">Type</label>
+                    <label class="text-gray-700 font-bold md:w-1/4 mb-2" htmlFor="type">Tipo</label>
                     <select
                         class="w-full md:w-3/4 bg-gray-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         name="type"
                         id="type"
                         onChange={(e) => setSelectedType(e.target.value)}
                     >
-                        <option value="image">Image</option>
-                        <option value="paragraph">Paragraph</option>
-                        <option value="quote">Quote</option>
+                        <option value="image">Immagine</option>
+                        <option value="paragraph">Paragrafo</option>
+                        <option value="quote">Citazione</option>
                     </select>
                 </div>
                 <div class="flex flex-col md:flex-row md:space-x-4">
-                    <label class="text-gray-700 font-bold md:w-1/4 self-center" htmlFor="value">Value</label>
+                    <label class="text-gray-700 font-bold md:w-1/4 mb-2 " htmlFor="value">Testo</label>
                     <input
                         class="w-full md:w-3/4 bg-gray-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         type="text"
@@ -134,7 +135,7 @@ const AddBody = (props) => {
                     class="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-600"
                     type="submit"
                 >
-                    Add
+                    Crea
                 </button>
             </form>
         </div>

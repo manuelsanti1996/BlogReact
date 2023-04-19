@@ -69,14 +69,14 @@ const DeleteComment = (props) => {
         <div className="p-5">
             <div className="flex flex-col">
                 <div className="flex flex-col">
-                    <label className="text-sm font-bold text-gray-700 tracking-wide">
-                        Select Comment
+                    <label className="text-sm font-bold  text-gray-700 tracking-wide">
+                        Elimina il Commento
                     </label>
                     <select
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500"
+                        className="block w-full px-4 py-2  mb-4 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500"
                         onChange={(e) => setSelected(e.target.value)}
                     >
-                        <option value="">select Comment</option>
+                        <option value="">Seleziona il Commento</option>
                         {data?.comment?.map((element) => (
                             <option key={element.name} value={element.name}>
                                 {element.name}
@@ -90,7 +90,7 @@ const DeleteComment = (props) => {
                 className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-600"
                 onClick={deleteElement}
             >
-                Delete Element
+                Elimina
             </button>
         </div>
     );

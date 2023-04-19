@@ -1,47 +1,12 @@
 {
   "articles": [
     {
-      "id": 2,
-      "title": "aaaaaaaaaaa",
-      "description": "aaa",
-      "image": "aa",
-      "tag": "tag1",
-      "comment": [],
-      "body": [
-        {
-          "type": "image",
-          "src": "../images/1.jpg"
-        },
-        {
-          "type": "paragraph",
-          "textValue": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere turpis in risus consectetur luctus. Duis ac lobortis sapien. "
-        },
-        {
-          "type": "quote",
-          "textValue": "Oggi è stata una fantastica giornata"
-        },
-        {
-          "type": "quote",
-          "textValue": "Oggi è stata una fantastica giornata"
-        }
-      ]
-    },
-    {
       "id": 3,
       "title": "Articolo 3",
       "description": "iniquit",
       "image": "../images/cardarticle.jpg",
       "tag": "tag3",
-      "comment": [
-        {
-          "name": "Jane",
-          "text": "Jane's comment"
-        },
-        {
-          "name": "Bob",
-          "text": "Bob's comment"
-        }
-      ],
+      "comment": [],
       "body": []
     },
     {
