@@ -1,3 +1,6 @@
+process.env.CI = false;
+
+
 import ArticleTemplate from './Views/ArticleTemplate';
 import Home from './Views/Home';
 import CreateArticle from './Components/CrudArticles/CreateArticle'
