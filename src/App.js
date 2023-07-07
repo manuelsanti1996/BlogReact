@@ -1,4 +1,4 @@
-process.env.CI = false;
+
 
 
 import ArticleTemplate from './Views/ArticleTemplate';
